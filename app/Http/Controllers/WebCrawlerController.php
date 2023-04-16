@@ -21,72 +21,72 @@ class WebCrawlerController extends Controller
     /**
      * @var array The URLs that have been visited during the crawl
      */
-    private $visitedPages = [];
+    private array $visitedPages = [];
 
     /**
      * @var array The internal links found during the crawl
      */
-    private $internalLinks = [];
+    private array $internalLinks = [];
 
     /**
      * @var array The external links found during the crawl
      */
-    private $externalLinks = [];
+    private array $externalLinks = [];
 
     /**
      * @var array The image URLs found during the crawl
      */
-    private $images = [];
+    private array $images = [];
 
     /**
      * @var string The entry point URL for the crawl
      */
-    private $entryPoint;
+    private string $entryPoint;
 
     /**
      * @var array The page load times recorded during the crawl
      */
-    private $pageLoadTimes = [];
+    private array $pageLoadTimes = [];
 
     /**
      * @var array The word counts for each page during the crawl
      */
-    private $wordCounts = [];
+    private array $wordCounts = [];
 
     /**
      * @var array The title lengths for each page during the crawl
      */
-    private $titleLengths = [];
+    private array $titleLengths = [];
 
     /**
      * @var array The HTTP status codes for each page during the crawl
      */
-    private $pageStatusCodes = [];
+    private array $pageStatusCodes = [];
 
     /**
      * @var bool Whether to count subdomains as internal links
      */
-    private $countSubdomainsAsInternal;
+    private bool $countSubdomainsAsInternal;
 
     /**
      * @var bool Whether to crawl subdomains
      */
-    private $crawlSubdomains;
+    private bool $crawlSubdomains;
 
     /**
      * @var bool Download CSV report of the results
      */
-    private $downloadCsvReport;
+    private bool $downloadCsvReport;
 
     /**
      * @var int The maximum number of pages to crawl
      */
-    private $maxPages;
+    private int $maxPages;
 
     /**
      * @var string The current date time string
      */
-    private $dateTimeString;
+    private string $dateTimeString;
 
     /**
      * Handles the form submission and starts the web crawl
@@ -176,7 +176,7 @@ class WebCrawlerController extends Controller
                     }
                     $this->internalLinks[] = $href;
                     $hrefHost = parse_url($href, PHP_URL_HOST);
-                    if (!in_array($href, $this->visitedPages) && !in_array($href, $queue) && ($this->crawlSubdomains || $hrefHost === $entryPointHost)) {
+                    if (($this->crawlSubdomains || $hrefHost === $entryPointHost) && !in_array($href, $this->visitedPages) && !in_array($href, $queue)) {
                         $queue[] = $href;
                     }
                 } else {
