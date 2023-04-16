@@ -1,4 +1,4 @@
-@include('layouts.header')
+@extends('layouts.header')
 @section('title', 'Laravel Web Crawler')
 <body>
     @include('layouts.navbar')
@@ -42,5 +42,5 @@
     </div>
     @include('layouts.scripts')
 </body>
-@include('layouts.footer')
+@extends('layouts.footer')
 
