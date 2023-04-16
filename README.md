@@ -55,3 +55,4 @@ Access the web crawler in your browser at the URL displayed in the console (usua
 
 - Modify the `WebCrawlerController` class to change the behavior of the web crawler.
 - Edit the `results.blade.php` file to customize the appearance of the results page.
+- Edit the `MAX_PAGES` variable in the `.env` file to set the maximum number of pages that can be crawled.
