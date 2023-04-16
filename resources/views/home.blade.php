@@ -1,6 +1,7 @@
 @include('layouts.header')
 @section('title', 'Laravel Web Crawler')
 <body>
+    @include('layouts.navbar')
     <div class="container my-5">
         <h1 class="text-center">Laravel Web Crawler</h1>
         <div class="card mx-auto mt-5" style="max-width: 500px;">
@@ -29,7 +30,7 @@
                         </label>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" name="generate_csv_report" value="true" id="generate_csv_report" checked>
+                        <input class="form-check-input" type="checkbox" name="generate_csv_report" value="true" id="generate_csv_report">
                         <label class="form-check-label" for="generate_csv_report">
                             Generate Web Crawler CSV Report
                         </label>
@@ -39,6 +40,7 @@
             </div>
         </div>
     </div>
+    @include('layouts.scripts')
 </body>
 @include('layouts.footer')
 
