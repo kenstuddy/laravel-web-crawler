@@ -30,9 +30,9 @@
                         </label>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" name="generate_csv_report" value="true" id="generate_csv_report">
-                        <label class="form-check-label" for="generate_csv_report">
-                            Generate Web Crawler CSV Report
+                        <input class="form-check-input" type="checkbox" name="download_csv_report" value="true" id="download_csv_report">
+                        <label class="form-check-label" for="download_csv_report">
+                            Download Web Crawler CSV Report
                         </label>
                     </div>
                     <button type="submit" class="btn btn-primary">Crawl Website</button>
