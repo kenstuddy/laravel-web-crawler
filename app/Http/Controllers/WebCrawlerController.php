@@ -171,7 +171,7 @@ class WebCrawlerController extends Controller
                 //Trim any trailing slash if it exists to ensure the URL is unique
                 $href = rtrim($href, "/");
                 if ($this->isInternalLink($href)) {
-                    if (strpos($href, '/') === 0) {
+                    if (Str::startsWith($href, '/')) {
                         $href = parse_url($currentUrl, PHP_URL_SCHEME) . '://' . parse_url($currentUrl, PHP_URL_HOST) . $href;
                     }
                     $this->internalLinks[] = $href;
@@ -252,7 +252,7 @@ class WebCrawlerController extends Controller
      */
     private function displayResults(): Factory|Application|Response|View|\Illuminate\Contracts\Foundation\Application|ResponseFactory
     {
-        if (!$this->dateTimeString) {
+        if (empty($this->dateTimeString)) {
             $this->dateTimeString = date("Y-m-d_h-i-s");
         }
         $this->crawl($this->entryPoint, $this->maxPages);
