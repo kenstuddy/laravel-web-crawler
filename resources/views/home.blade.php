@@ -19,13 +19,19 @@
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" name="count_subdomains_as_internal" value="true" id="count_subdomains_as_internal" checked>
                         <label class="form-check-label" for="count_subdomains_as_internal">
-                            Count subdomains as internal links
+                            Count Subdomains as Internal Links
                         </label>
                     </div>
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" name="crawl_subdomains" value="true" id="crawl_subdomains" checked>
                         <label class="form-check-label" for="crawl_subdomains">
-                            Crawl subdomains of the URL to crawl
+                            Crawl Subdomains of the URL to Crawl
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="generate_csv_report" value="true" id="generate_csv_report" checked>
+                        <label class="form-check-label" for="generate_csv_report">
+                            Generate Web Crawler CSV Report
                         </label>
                     </div>
                     <button type="submit" class="btn btn-primary">Crawl Website</button>
