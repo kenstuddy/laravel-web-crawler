@@ -22,6 +22,12 @@
                             Count subdomains as internal links
                         </label>
                     </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="crawl_subdomains" value="true" id="crawl_subdomains" checked>
+                        <label class="form-check-label" for="crawl_subdomains">
+                            Crawl subdomains of the URL to crawl
+                        </label>
+                    </div>
                     <button type="submit" class="btn btn-primary">Crawl Website</button>
                 </form>
             </div>
