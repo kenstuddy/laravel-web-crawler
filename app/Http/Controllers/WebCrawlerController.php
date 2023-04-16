@@ -299,7 +299,7 @@ class WebCrawlerController extends Controller
     {
         $csvData = '';
 
-        $handle = fopen('php://temp', 'r+');
+        $handle = fopen('php://temp', 'rb+');
 
         fputcsv($handle, ['Laravel Web Crawler Report - ' . $this->dateTimeString]);
         //Add metrics to CSV
@@ -361,7 +361,7 @@ class WebCrawlerController extends Controller
 
         //Write the CSV file with the provided CSV data
         $csvFilePath = $directory . '/' . $csvFileName;
-        $file = fopen($csvFilePath, 'w');
+        $file = fopen($csvFilePath, 'wb');
         fwrite($file, $csvData);
         fclose($file);
     }
