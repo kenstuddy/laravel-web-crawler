@@ -107,7 +107,7 @@ class WebCrawlerController extends Controller
         $this->entryPoint = $request->input('entry_point');
         $this->crawlSubdomains = $request->input('crawl_subdomains') === 'true';
         $this->downloadCsvReport = $request->input('download_csv_report') === 'true';
-        $this->maxPages = $request->input('max_pages', 6);
+        $this->maxPages = min($request->input('max_pages'), env('MAX_PAGES', 6));
         return $this->displayResults();
     }
 

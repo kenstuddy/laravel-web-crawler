@@ -15,7 +15,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="entry_point" class="form-label">Maximum Pages to Crawl:</label>
-                        <input type="number" class="form-control" id="max_pages" name="max_pages" placeholder="Enter the number of pages you want to crawl" value="6" required>
+                        <input type="number" class="form-control" id="max_pages" name="max_pages" placeholder="Enter the number of pages you want to crawl" min="1" max="{{ $maxPages }}" value="{{ min(6, $maxPages) }}" required>
                     </div>
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" name="count_subdomains_as_internal" value="true" id="count_subdomains_as_internal" checked>

@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $maxPages = env('MAX_PAGES', 6);
+    return view('home', compact('maxPages'));
 });
 
 Route::post('/crawl', [WebCrawlerController::class,'handleFormSubmit']);
