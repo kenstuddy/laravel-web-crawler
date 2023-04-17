@@ -264,9 +264,10 @@ class WebCrawlerController extends Controller
         $averageWordCount = array_sum($this->wordCounts) / count($this->wordCounts);
         $averageTitleLength = array_sum($this->titleLengths) / count($this->titleLengths);
 
-
+        //Generate CSV file data so we can save it to a file in local storage
         $csvData = $this->generateCsv();
         $csvFileName = 'laravel_web_crawler_report_' . $this->dateTimeString . '.csv';
+        //Save the CSV file to local storage regardless of whether we want to download it
         $this->saveCsvToStorage($csvFileName, $csvData);
         if ($this->downloadCsvReport) {
             return response($csvData, 200, [
