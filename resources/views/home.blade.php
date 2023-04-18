@@ -1,6 +1,6 @@
-@extends('layouts.header')
+@extends('layouts.app')
 @section('title', 'Laravel Web Crawler')
-<body>
+@section('content')
     @include('layouts.navbar')
     <div class="container my-5">
         <h1 class="text-center">Laravel Web Crawler</h1>
@@ -41,6 +41,5 @@
         </div>
     </div>
     @include('layouts.scripts')
-</body>
-@extends('layouts.footer')
+@endsection
 

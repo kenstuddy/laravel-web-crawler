@@ -1,6 +1,6 @@
-@extends('layouts.header')
+@extends('layouts.app')
 @section('title', 'Laravel Web Crawler Results')
-<body>
+@section('content')
     @include('layouts.navbar')
     <div class="container mt-5">
         <h1>Laravel Web Crawler Crawl Results</h1>
@@ -39,5 +39,4 @@
         </div>
     </div>
     @include('layouts.scripts')
-</body>
-@extends('layouts.footer')
+@endsection
